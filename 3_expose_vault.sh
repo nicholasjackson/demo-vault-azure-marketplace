@@ -1,4 +1,4 @@
-/bin/bash
+#!/bin/bash
 
 set -e
 
@@ -7,9 +7,9 @@ kubectl port-forward ${POD_NAME} -n ${VAULT_K8S_NAMESPACE} 8200:8200 &
 
 echo "Vault is now exposed at http://localhost:8200, to stop the port-forward run the following command:"
 echo ""
-echo "kill $(lsof -t -i:8200)"
+echo "pkill kubectl"
 echo ""
-echo "To interact with the Vault server, set the VAULT_TOKEN, and VAULT_ADDR environment variable,
+echo "To interact with the Vault server, set the VAULT_TOKEN, and VAULT_ADDR environment variable,"
 echo "using the following commands:"
 
 echo "export VAULT_TOKEN=$(cat cluster-keys.json | jq -r '.root_token')"

@@ -1,4 +1,4 @@
-/bin/bash
+#!/bin/bash
 
 set -e
 
@@ -11,7 +11,7 @@ kubectl port-forward ${APP_NAME} 1443:443 &
 
 echo "App is now exposed at http://localhost:1443, to stop the port-forward run the following command:"
 echo ""
-echo "kill $(lsof -t -i:1443)"  
+echo "pkill kubectl"  
 
 echo "Checking SSL cert"
 
